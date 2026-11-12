@@ -1,0 +1,58 @@
+WEBVTT
+
+00:00:04.002 --> 00:00:05.382
+This is Value rows.
+
+00:00:05.382 --> 00:00:09.354
+It turns the properties panel into a short summary of the shape you select.
+
+00:00:09.804 --> 00:00:11.519
+Each property gets one row,
+
+00:00:11.519 --> 00:00:14.991
+with its name on the left and its current value on the right.
+
+00:00:15.493 --> 00:00:17.533
+To change one, open its row.
+
+00:00:17.533 --> 00:00:21.897
+The options appear right underneath, and the canvas updates as you pick.
+
+00:00:23.663 --> 00:00:28.139
+Background works the same way, and the row shows the new color by name.
+
+00:00:30.859 --> 00:00:32.479
+Edges go from round to sharp.
+
+00:00:32.479 --> 00:00:36.466
+Close the row, and it still tells you the value.
+
+00:00:38.335 --> 00:00:42.691
+The full palette, with shades and a hex code, is one more click away.
+
+00:00:45.864 --> 00:00:49.059
+Fill, Stroke width, Stroke style,
+
+00:00:49.059 --> 00:00:53.807
+Sloppiness and Opacity each open in place too, one at a time.
+
+00:01:00.877 --> 00:01:04.047
+Layers and the actions share one row of icons at the bottom.
+
+00:01:06.063 --> 00:01:10.763
+What works well: you can read the whole style at a glance,
+
+00:01:10.763 --> 00:01:13.768
+the panel is about half as tall as today's,
+
+00:01:13.768 --> 00:01:15.796
+and every control is still in it.
+
+00:01:16.497 --> 00:01:20.137
+What's harder: every change takes one more click than today.
+
+00:01:20.137 --> 00:01:23.492
+Changing several things means opening several rows,
+
+00:01:23.492 --> 00:01:26.118
+and the full palette still opens beside the panel.

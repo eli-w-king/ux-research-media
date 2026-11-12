@@ -1,0 +1,67 @@
+WEBVTT
+
+00:00:04.200 --> 00:00:07.535
+This is Looks. Instead of a stack of settings,
+
+00:00:07.535 --> 00:00:10.413
+the panel starts with a few whole looks.
+
+00:00:10.914 --> 00:00:13.814
+Each look is drawn in the shape's own colors,
+
+00:00:13.814 --> 00:00:16.607
+with Stroke, Background and Edges right below.
+
+00:00:17.107 --> 00:00:20.194
+Those work just like today, one click each.
+
+00:00:22.424 --> 00:00:24.974
+The looks follow along in the new colors and edges,
+
+00:00:24.974 --> 00:00:26.791
+and the one that matches is marked.
+
+00:00:27.393 --> 00:00:32.352
+Now a whole look in one click: no fill, a thicker stroke and rougher lines.
+
+00:00:35.012 --> 00:00:36.621
+One undo puts it all back.
+
+00:00:38.227 --> 00:00:41.860
+Cross-hatch keeps the green background and changes only the fill.
+
+00:00:42.361 --> 00:00:44.776
+Behind each color is the full picker,
+
+00:00:44.776 --> 00:00:48.332
+with the palette, shades and a hex code.
+
+00:00:54.241 --> 00:00:58.801
+The fine controls fold under More options:
+
+00:00:58.801 --> 00:01:04.228
+Fill, Stroke width, Stroke style, Sloppiness and Opacity.
+
+00:01:05.811 --> 00:01:09.074
+Then Layers and Actions, like duplicate and delete.
+
+00:01:14.495 --> 00:01:17.435
+What works: you pick a result you can see,
+
+00:01:17.435 --> 00:01:21.119
+in your own colors, and one undo takes it back.
+
+00:01:21.720 --> 00:01:24.788
+The controls people change most stay right where they are.
+
+00:01:25.689 --> 00:01:29.144
+What doesn't: six looks can't cover every mix,
+
+00:01:29.144 --> 00:01:32.620
+so some changes still mean opening More options.
+
+00:01:33.121 --> 00:01:35.802
+A look can also clear a background you set.
+
+00:01:36.302 --> 00:01:39.982
+And with More options open, the panel gets long and scrolls.

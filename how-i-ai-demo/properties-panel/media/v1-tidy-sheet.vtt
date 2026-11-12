@@ -1,0 +1,64 @@
+WEBVTT
+
+00:00:03.801 --> 00:00:06.862
+This is Tidy sheet. Every option stays in view.
+
+00:00:08.518 --> 00:00:13.313
+Instead of a label above every group of buttons, each property gets one row:
+
+00:00:13.313 --> 00:00:17.044
+its name on the left, its choices on the right.
+
+00:00:17.446 --> 00:00:20.753
+Stroke colors sit right in the row, one click each.
+
+00:00:21.154 --> 00:00:22.636
+Background works the same way.
+
+00:00:24.104 --> 00:00:27.095
+Edges take one click too, from round to sharp.
+
+00:00:27.536 --> 00:00:31.041
+Each color row ends in a swatch that opens the full palette,
+
+00:00:31.041 --> 00:00:33.018
+with shades and a hex code.
+
+00:00:34.522 --> 00:00:35.997
+Background has the same palette.
+
+00:00:39.300 --> 00:00:43.830
+Stroke width, Stroke style and Sloppiness each sit on one track,
+
+00:00:43.830 --> 00:00:45.544
+with the current choice marked.
+
+00:00:45.945 --> 00:00:49.762
+Setting a background added the Fill row, just above Edges.
+
+00:00:50.164 --> 00:00:53.772
+Opacity is an inline slider, with its value at the end.
+
+00:00:54.641 --> 00:00:57.596
+Layers and the actions share one icon row at the bottom.
+
+00:00:59.463 --> 00:01:03.354
+Nothing is hidden, and the sheet is about half the height of today's panel.
+
+00:01:03.755 --> 00:01:06.430
+What works: nothing moves behind a click,
+
+00:01:06.430 --> 00:01:09.527
+and every control is one people already know.
+
+00:01:10.028 --> 00:01:14.179
+The current values line up in one column, so the sheet reads like a summary.
+
+00:01:15.180 --> 00:01:18.355
+What doesn't: it's wider than today's panel,
+
+00:01:18.355 --> 00:01:20.747
+so it covers a little more of the canvas.
+
+00:01:21.247 --> 00:01:24.427
+And it tidies today's panel more than it rethinks it.

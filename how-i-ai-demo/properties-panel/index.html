@@ -6,13 +6,12 @@
 <meta name="robots" content="noindex">
 <meta name="color-scheme" content="light">
 <link rel="icon" href="data:,">
-<meta name="description" content="Three properties panel variations for a practice copy of Excalidraw, with demo videos, screenshots, pros and cons, and the code.">
-<title>Properties panel variations</title>
+<meta name="description" content="Value rows, the properties panel direction we picked for a practice copy of Excalidraw, in its second version: screenshots, the first version's demo video, pros and cons, and the code.">
+<title>Properties panel: Value rows</title>
 <style>
   :root {
     color-scheme: light;
     --bg: #ffffff;
-    --surface-soft: #f2f2f2;
     --border: #d8d8d8;
     --text: #000000;
     --muted: #555555;
@@ -71,7 +70,6 @@
   h4,
   p,
   ul,
-  ol,
   dl,
   dd,
   figure {
@@ -187,59 +185,7 @@
     align-items: start;
   }
 
-  /* overview */
-
-  .toc {
-    margin-top: 64px;
-    border-top: 1px solid var(--text);
-    padding-top: 20px;
-  }
-
-  .toc ol {
-    margin-top: 8px;
-    padding: 0;
-    list-style: none;
-  }
-
-  .toc li + li {
-    border-top: 1px solid var(--border);
-  }
-
-  .toc a {
-    display: grid;
-    grid-template-columns: 24px 9rem minmax(0, 1fr);
-    gap: 4px 16px;
-    align-items: baseline;
-    min-height: 44px;
-    padding: 12px 0;
-    text-decoration: none;
-  }
-
-  .toc .num {
-    display: grid;
-    width: 24px;
-    height: 24px;
-    place-items: center;
-    align-self: center;
-    background: var(--text);
-    color: var(--bg);
-    font-size: var(--step--2);
-    font-weight: 700;
-    line-height: 1;
-  }
-
-  .toc .name {
-    font-weight: 600;
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.2em;
-  }
-
-  .toc .idea {
-    color: var(--muted);
-  }
-
-  /* a variation */
+  /* the variation */
 
   .variation {
     margin-top: clamp(80px, 11vw, 136px);
@@ -258,45 +204,50 @@
     line-height: 1.45;
   }
 
-  .demo {
-    margin-top: 36px;
-  }
-
-  .demo video {
-    aspect-ratio: 16 / 10;
-    background: #ffffff;
-  }
-
   .block {
     margin-top: 56px;
+  }
+
+  .variation > .block:first-of-type {
+    margin-top: 44px;
   }
 
   .block > h3 {
     margin-bottom: 16px;
   }
 
-  /* screenshots at one scale: column widths follow each image's aspect ratio, so heights match */
-  .shots {
-    display: grid;
-    gap: 24px var(--gap);
-    align-items: start;
-  }
-
-  .shots.three {
-    grid-template-columns: 39.47fr 39.47fr 46.21fr;
-    max-width: min(100%, calc((100% - 3 * var(--gap)) * 0.76025 + 2 * var(--gap)));
-  }
-
-  .shots.four {
-    grid-template-columns: 39.47fr 39.47fr 39.47fr 46.21fr;
-  }
-
-  .wide {
-    margin-top: 32px;
-  }
-
-  .writeup p {
+  .writeup p,
+  .writeup ul {
     max-width: var(--measure);
+  }
+
+  .writeup p + p,
+  .writeup p + ul {
+    margin-top: 14px;
+  }
+
+  .marks {
+    padding: 0;
+    list-style: none;
+  }
+
+  .marks li {
+    position: relative;
+    padding-left: 18px;
+  }
+
+  .marks li + li {
+    margin-top: 8px;
+  }
+
+  .marks li::before {
+    position: absolute;
+    top: 0.68em;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    background: var(--text);
+    content: "";
   }
 
   .proscons {
@@ -304,7 +255,7 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px 40px;
     max-width: 56rem;
-    margin-top: 28px;
+    margin-top: 32px;
   }
 
   .proscons > div {
@@ -314,28 +265,46 @@
 
   .proscons ul {
     margin-top: 10px;
-    padding: 0;
-    list-style: none;
   }
 
   .proscons li {
-    position: relative;
-    padding-left: 18px;
     color: var(--muted);
   }
 
-  .proscons li + li {
-    margin-top: 8px;
+  /* screenshots at one scale: column widths follow each image's aspect ratio, so heights match */
+  .shots {
+    display: grid;
+    gap: 24px var(--gap);
+    align-items: start;
   }
 
-  .proscons li::before {
-    position: absolute;
-    top: 0.68em;
-    left: 0;
-    width: 5px;
-    height: 5px;
-    background: var(--text);
-    content: "";
+  .shots + .shots {
+    margin-top: 32px;
+  }
+
+  .shots.four {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  /* one panel and two phones, as tall as the row of four above */
+  .shots.trio {
+    grid-template-columns: 39.47fr 46.21fr 46.21fr;
+    max-width: min(100%, calc((100% - 3 * var(--gap)) * 0.835381 + 2 * var(--gap)));
+  }
+
+  .wide {
+    margin-top: 32px;
+  }
+
+  .note {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: var(--step--1);
+  }
+
+  .lead {
+    max-width: var(--measure);
+    margin-bottom: 16px;
   }
 
   .code dl {
@@ -361,12 +330,6 @@
     min-height: 44px;
   }
 
-  .note {
-    margin-top: 12px;
-    color: var(--muted);
-    font-size: var(--step--1);
-  }
-
   footer {
     margin-top: clamp(96px, 12vw, 152px);
     border-top: 1px solid var(--border);
@@ -384,8 +347,8 @@
   }
 
   @media (max-width: 760px) {
-    .shots.three,
-    .shots.four {
+    .shots.four,
+    .shots.trio {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       max-width: none;
     }
@@ -409,11 +372,6 @@
       --gap: 14px;
     }
 
-    /* phone crops of the wide shots show the panel at its real size */
-    .wide img {
-      width: min(100%, var(--narrow, 100%));
-    }
-
     .pair {
       grid-template-columns: minmax(0, 1fr);
     }
@@ -422,12 +380,14 @@
       width: 55%;
     }
 
-    .toc a {
-      grid-template-columns: 24px minmax(0, 1fr);
+    /* on phones, the details switch to tight crops: panels at their real size, trays full width */
+    .shots.trio {
+      grid-template-columns: minmax(0, 1fr);
     }
 
-    .toc .idea {
-      grid-column: 2;
+    .wide img,
+    .shots.trio img {
+      width: min(100%, var(--narrow, 100%));
     }
   }
 </style>
@@ -436,9 +396,9 @@
 <div class="page">
   <header class="intro">
     <p class="label">Design exploration, November 2026</p>
-    <h1>Properties panel variations</h1>
+    <h1>Properties panel: Value rows</h1>
     <p class="question">How should the properties panel show a shape's style options so it feels less crowded, without hiding what people use?</p>
-    <p class="context">We built five directions in a practice copy of Excalidraw and compared them side by side. These are the three we liked.</p>
+    <p class="context">We built five directions in a practice copy of Excalidraw and compared them side by side. Value rows is the one we picked, and this is its second version, with the team's feedback folded in.</p>
 
     <figure class="today">
       <div class="pair">
@@ -447,141 +407,98 @@
       </div>
       <figcaption>Today's panel, with a rectangle selected, on desktop and on a phone.</figcaption>
     </figure>
-
-    <nav class="toc" aria-label="The three variations">
-      <p class="label">The three variations</p>
-      <ol>
-        <li><a href="#tidy-sheet"><span class="num" aria-hidden="true">1</span><span class="name">Tidy sheet</span><span class="idea">Every option stays in view, at about half today's height.</span></a></li>
-        <li><a href="#value-rows"><span class="num" aria-hidden="true">2</span><span class="name">Value rows</span><span class="idea">One row per property shows its value; open a row to change it.</span></a></li>
-        <li><a href="#looks"><span class="num" aria-hidden="true">3</span><span class="name">Looks</span><span class="idea">Pick a whole look in one click, then adjust right below.</span></a></li>
-      </ol>
-    </nav>
   </header>
 
   <main>
-    <section class="variation" id="tidy-sheet" aria-labelledby="tidy-sheet-title">
-      <p class="label">Variation 1</p>
-      <h2 id="tidy-sheet-title">Tidy sheet</h2>
-      <p class="idea-line">Every option stays in view, as a tight property sheet with inline labels, at about half today's height.</p>
-
-      <figure class="demo">
-        <video class="frame" controls preload="metadata" playsinline poster="media/v1-poster.webp" width="1920" height="1200" aria-label="Tidy sheet demo video">
-          <source src="media/v1-tidy-sheet.mp4" type="video/mp4">
-          <track kind="captions" src="media/v1-tidy-sheet.vtt" srclang="en" label="English" default>
-          <a href="media/v1-tidy-sheet.mp4">Download the Tidy sheet demo (MP4)</a>
-        </video>
-        <figcaption>Demo, 1 min 27 s, narrated, with captions.</figcaption>
-      </figure>
-
-      <div class="block">
-        <h3>What changes</h3>
-        <div class="shots three">
-          <figure>
-            <a href="shots/today-full.webp"><img class="frame" src="shots/today-panel.webp" width="600" height="1520" loading="lazy" alt="Today's panel, 610 pixels tall: Stroke, Background, Stroke width, Stroke style, Sloppiness, Edges, Opacity, Layers and Actions, each under its own label."></a>
-            <figcaption>Today, 610 px tall.</figcaption>
-          </figure>
-          <figure>
-            <a href="shots/v1-full.webp"><img class="frame" src="shots/v1-panel.webp" width="600" height="1520" loading="lazy" alt="Tidy sheet, 308 pixels tall: one row per property with a short label on the left and its choices on one track, then layers and the actions in one icon row."></a>
-            <figcaption>Tidy sheet, 308 px, with every option still in view.</figcaption>
-          </figure>
-          <figure>
-            <a href="shots/v1-phone.webp"><img class="frame" src="shots/v1-phone.webp" width="780" height="1688" loading="lazy" alt="Tidy sheet on a phone: the sheet's rows in a tray above the bar, which keeps the stroke and background swatches and the sheet button."></a>
-            <figcaption>On a phone, the rest of the sheet opens in a tray above the bar.</figcaption>
-          </figure>
-        </div>
-        <figure class="wide" style="--narrow: 530px">
-          <a href="shots/v1-palette-full.webp"><picture><source media="(max-width: 560px)" srcset="shots/v1-palette-narrow.webp" width="1060" height="748"><img class="frame" src="shots/v1-palette.webp" width="2320" height="940" loading="lazy" alt="Tidy sheet with the rectangle styled green with sharp edges. A Fill row has appeared, and today's full color palette is open beside the Stroke row."></picture></a>
-          <figcaption>The swatch at the end of each color row opens today's full palette, beside the sheet. Setting a background adds the Fill row.</figcaption>
-        </figure>
-      </div>
-
-      <div class="block writeup">
-        <h3>How it works</h3>
-        <p>Tidy sheet keeps today's controls and changes the layout. Each property gets one row, with a short label on the left and its choices on one track on the right. The current values line up in one column, so the sheet also reads as a summary of the style. On a phone, stroke and background stay in the bar and the rest opens in a tray above it.</p>
-        <div class="proscons">
-          <div>
-            <h4>What works</h4>
-            <ul>
-              <li>Nothing moves behind a click, and every control is one people already know.</li>
-              <li>It's about half as tall as today's panel. With three shapes selected, today's panel scrolls and the sheet doesn't.</li>
-            </ul>
-          </div>
-          <div>
-            <h4>What doesn't</h4>
-            <ul>
-              <li>It's wider than today's panel (268 px against 195 px), so it covers a little more of the canvas.</li>
-              <li>It tidies today's panel more than it rethinks it.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="block code">
-        <h3>Code</h3>
-        <dl>
-          <div><dt>Branch</dt><dd><a href="https://github.com/eli-w-king/excalidraw-demo-copy/tree/lab/panel-v1"><code>lab/panel-v1</code></a></dd></div>
-          <div><dt>Worktree</dt><dd><code>properties-panel-variation1-tidy-sheet</code></dd></div>
-          <div><dt>Draft pull request</dt><dd><a href="https://github.com/eli-w-king/excalidraw-demo-copy/pull/1">Pull request #1</a></dd></div>
-        </dl>
-        <p class="note">The code is in a private repository, so the branch and pull request links only open for its owner.</p>
-      </div>
-    </section>
-
     <section class="variation" id="value-rows" aria-labelledby="value-rows-title">
-      <p class="label">Variation 2</p>
+      <p class="label">The direction we picked</p>
       <h2 id="value-rows-title">Value rows</h2>
       <p class="idea-line">One row per property shows its current value; open one row at a time to change it, right there.</p>
 
-      <figure class="demo">
-        <video class="frame" controls preload="metadata" playsinline poster="media/v2-poster.webp" width="1920" height="1200" aria-label="Value rows demo video">
-          <source src="media/v2-value-rows.mp4" type="video/mp4">
-          <track kind="captions" src="media/v2-value-rows.vtt" srclang="en" label="English" default>
-          <a href="media/v2-value-rows.mp4">Download the Value rows demo (MP4)</a>
-        </video>
-        <figcaption>Demo, 1 min 29 s, narrated, with captions.</figcaption>
-      </figure>
+      <div class="block writeup">
+        <h3>How it works now</h3>
+        <p>Value rows turns the panel into a short summary of the selected shape: one row per property, with its name and current value (Stroke: Black). Open a row and its choices appear right under it as a grid, each with the product's icon over its name. One row is open at a time, and the panel never gets wider.</p>
+        <p>What's new, from the team's feedback:</p>
+        <ul class="marks">
+          <li>Looks is the first row. It names the look the shape matches (or Custom) and opens six named looks, drawn in the shape's own colors. One click applies a whole look, and one undo takes it back.</li>
+          <li>Stroke width sits right after Stroke.</li>
+          <li>Colors show five top picks. The last cell opens the full palette in place, so nothing opens beside the panel.</li>
+          <li>It works with a keyboard: arrow keys move between rows, Enter opens one and Escape closes it. Screen readers announce each row's name and value, and every change.</li>
+          <li>Opening a row never pans the canvas or covers the selected shape; the panel scrolls instead.</li>
+          <li>On a phone, Looks, Stroke, Stroke width, Background and Edges are chips along the bottom, and each opens its grid in a tray above the bar.</li>
+        </ul>
+        <div class="proscons">
+          <div>
+            <h4>What works</h4>
+            <ul class="marks">
+              <li>You can read the whole style at a glance, and the first row names the whole look.</li>
+              <li>Closed, it's about half as tall as today's panel (310 px against 610 px), and every control is still in it.</li>
+              <li>Every change is the same two steps with a mouse, a finger or a keyboard: open the row, then pick.</li>
+              <li>Nothing opens beside the panel, and the canvas stays put.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>What doesn't</h4>
+            <ul class="marks">
+              <li>A change still takes one more click than today's always-open panel.</li>
+              <li>With the full palette open, a color row gets tall, so the panel scrolls on a small laptop.</li>
+              <li>A few new labels (Looks, Custom and the look names) aren't in the product's translations yet.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
       <div class="block">
         <h3>What changes</h3>
-        <div class="shots three">
+        <div class="shots four">
           <figure>
             <a href="shots/today-full.webp"><img class="frame" src="shots/today-panel.webp" width="600" height="1520" loading="lazy" alt="Today's panel, 610 pixels tall: Stroke, Background, Stroke width, Stroke style, Sloppiness, Edges, Opacity, Layers and Actions, each under its own label."></a>
             <figcaption>Today, 610 px tall.</figcaption>
           </figure>
           <figure>
-            <a href="shots/v2-full.webp"><img class="frame" src="shots/v2-panel.webp" width="600" height="1520" loading="lazy" alt="Value rows, 278 pixels tall: Stroke Black, Background Transparent, Edges Round, Stroke width Medium, Stroke style Solid, Sloppiness Artist and Opacity 100, then one icon row for layers and the actions."></a>
-            <figcaption>Value rows, 278 px, each row showing its current value.</figcaption>
+            <a href="shots/v2r2-full.webp"><img class="frame" src="shots/v2r2-panel.webp" width="600" height="1520" loading="lazy" alt="Value rows, 310 pixels tall: Looks Outline, Stroke Black, Stroke width Medium, Background Transparent and Edges Round, then Stroke style Solid, Sloppiness Artist and Opacity 100, then one icon row for layers and the actions."></a>
+            <figcaption>Value rows, 310 px, with Looks first and Stroke width right after Stroke.</figcaption>
           </figure>
           <figure>
-            <a href="shots/v2-phone.webp"><img class="frame" src="shots/v2-phone.webp" width="780" height="1688" loading="lazy" alt="Value rows on a phone: chips for stroke, background, edges and More options in the bar, with the stroke tray open above it."></a>
-            <figcaption>On a phone, stroke, background and edges are chips in the bar. Each opens a tray.</figcaption>
+            <a href="shots/v2r2-looks-full.webp"><img class="frame" src="shots/v2r2-looks.webp" width="600" height="1520" loading="lazy" alt="Value rows with the Looks row open: six tiles named Outline, Hatched, Cross-hatched, Solid, Bold sketch and Dashed, two to a line, with Outline marked."></a>
+            <figcaption>Looks open: six whole looks, each with a plain name.</figcaption>
+          </figure>
+          <figure>
+            <a href="shots/v2r2-width-full.webp"><img class="frame" src="shots/v2r2-width.webp" width="600" height="1520" loading="lazy" alt="Value rows with the Stroke width row open: three cells named Thin, Medium and Bold, with Medium marked."></a>
+            <figcaption>Stroke width open: a grid of named choices.</figcaption>
           </figure>
         </div>
-        <figure class="wide" style="--narrow: 264px">
-          <a href="shots/v2-row-open-full.webp"><picture><source media="(max-width: 560px)" srcset="shots/v2-row-open-narrow.webp" width="528" height="692"><img class="frame" src="shots/v2-row-open.webp" width="2320" height="940" loading="lazy" alt="Value rows with the Stroke row open: five color swatches under the row with green picked, the row reading Green, and the rectangle on the canvas outlined in green."></picture></a>
-          <figcaption>Open a row and today's control appears right under it. Pick green, and the row reads Green.</figcaption>
+        <div class="shots trio">
+          <figure style="--narrow: 250px">
+            <a href="shots/v2r2-palette-full.webp"><picture><source media="(max-width: 560px)" srcset="shots/v2r2-palette-narrow.webp" width="500" height="1216"><img class="frame" src="shots/v2r2-palette.webp" width="600" height="1520" loading="lazy" alt="Value rows with the Stroke row open: five color swatches and a sixth cell that has opened the full palette in place, with colors, shades and a hex code field."></picture></a>
+            <figcaption>The last color cell opens the full palette in place.</figcaption>
+          </figure>
+          <figure>
+            <a href="shots/v2r2-phone-looks.webp"><picture><source media="(max-width: 560px)" srcset="shots/v2r2-phone-looks-tray.webp" width="780" height="632"><img class="frame" src="shots/v2r2-phone-looks.webp" width="780" height="1688" loading="lazy" alt="Value rows on a phone: a tray above the bar shows the six named looks in two lines of three. The bar holds chips for Looks, Stroke, Stroke width, Background, Edges and More options."></picture></a>
+            <figcaption>On a phone, Looks opens in a tray above the bar.</figcaption>
+          </figure>
+          <figure>
+            <a href="shots/v2r2-phone-width.webp"><picture><source media="(max-width: 560px)" srcset="shots/v2r2-phone-width-tray.webp" width="780" height="464"><img class="frame" src="shots/v2r2-phone-width.webp" width="780" height="1688" loading="lazy" alt="Value rows on a phone with the Stroke width tray open: Thin, Medium and Bold, with Medium marked."></picture></a>
+            <figcaption>Stroke width in the tray, with 44 px targets.</figcaption>
+          </figure>
+        </div>
+        <figure class="wide" style="--narrow: 250px">
+          <a href="shots/v2r2-colors-full.webp"><picture><source media="(max-width: 560px)" srcset="shots/v2r2-colors-narrow.webp" width="500" height="1156"><img class="frame" src="shots/v2r2-colors.webp" width="2320" height="1400" loading="lazy" alt="Value rows beside the canvas with the Looks row open. The rectangle has a green stroke and a light green background, the six tiles are drawn in the same greens, and Solid is marked."></picture></a>
+          <figcaption>The tiles are drawn in the shape's own colors. With a green stroke and a light green background, the rectangle matches Solid, and the row says so.</figcaption>
         </figure>
       </div>
 
-      <div class="block writeup">
-        <h3>How it works</h3>
-        <p>Value rows turns the panel into a short summary of the selection. Each property is one row with its name and current value, like Stroke: Black or Edges: Round. Click a row and today's control opens right under it, pushing the rows below down. One row is open at a time, and it stays open when the selection changes. On a phone, stroke, background and edges become chips in the bar, and More options holds the rest.</p>
-        <div class="proscons">
-          <div>
-            <h4>What works</h4>
-            <ul>
-              <li>You can read the whole style at a glance.</li>
-              <li>It's about half as tall as today's panel, and every control is still in it.</li>
-            </ul>
-          </div>
-          <div>
-            <h4>What doesn't</h4>
-            <ul>
-              <li>Every change takes one more click than today.</li>
-              <li>Changing several things means opening several rows, and the full palette still opens beside the panel.</li>
-            </ul>
-          </div>
-        </div>
+      <div class="block">
+        <h3>The first version, on video</h3>
+        <p class="lead">This video shows the first version. The panel has changed since then, and the screenshots above show it now.</p>
+        <figure>
+          <video class="frame" controls preload="metadata" playsinline poster="media/v2-poster.webp" width="1920" height="1200" aria-label="Value rows, first version, demo video">
+            <source src="media/v2-value-rows.mp4" type="video/mp4">
+            <track kind="captions" src="media/v2-value-rows.vtt" srclang="en" label="English" default>
+            <a href="media/v2-value-rows.mp4">Download the first version's demo (MP4)</a>
+          </video>
+          <figcaption>The first version, 1 min 29 s, narrated, with captions.</figcaption>
+        </figure>
       </div>
 
       <div class="block code">
@@ -594,84 +511,11 @@
         <p class="note">The code is in a private repository, so the branch and pull request links only open for its owner.</p>
       </div>
     </section>
-
-    <section class="variation" id="looks" aria-labelledby="looks-title">
-      <p class="label">Variation 3</p>
-      <h2 id="looks-title">Looks</h2>
-      <p class="idea-line">Pick a whole look in one click, then adjust stroke, background and edges right below; fine controls fold under More options.</p>
-
-      <figure class="demo">
-        <video class="frame" controls preload="metadata" playsinline poster="media/v3-poster.webp" width="1920" height="1200" aria-label="Looks demo video">
-          <source src="media/v3-looks.mp4" type="video/mp4">
-          <track kind="captions" src="media/v3-looks.vtt" srclang="en" label="English" default>
-          <a href="media/v3-looks.mp4">Download the Looks demo (MP4)</a>
-        </video>
-        <figcaption>Demo, 1 min 42 s, narrated, with captions.</figcaption>
-      </figure>
-
-      <div class="block">
-        <h3>What changes</h3>
-        <div class="shots four">
-          <figure>
-            <a href="shots/today-full.webp"><img class="frame" src="shots/today-panel.webp" width="600" height="1520" loading="lazy" alt="Today's panel, 610 pixels tall: Stroke, Background, Stroke width, Stroke style, Sloppiness, Edges, Opacity, Layers and Actions, each under its own label."></a>
-            <figcaption>Today, 610 px tall.</figcaption>
-          </figure>
-          <figure>
-            <a href="shots/v3-full.webp"><img class="frame" src="shots/v3-panel.webp" width="600" height="1520" loading="lazy" alt="Looks, 356 pixels tall: a gallery of six rectangle looks, then Stroke, Background and Edges, then a closed More options."></a>
-            <figcaption>Looks, 356 px, with More options closed.</figcaption>
-          </figure>
-          <figure>
-            <a href="shots/v3-more-full.webp"><img class="frame" src="shots/v3-more.webp" width="600" height="1520" loading="lazy" alt="Looks with More options open: Stroke width, Stroke style, Sloppiness, Opacity, Layers and the actions below the gallery and the three main controls. The panel is cut off at the bottom of the window and scrolls."></a>
-            <figcaption>More options opens in place. With it open, the panel scrolls.</figcaption>
-          </figure>
-          <figure>
-            <a href="shots/v3-phone.webp"><img class="frame" src="shots/v3-phone.webp" width="780" height="1688" loading="lazy" alt="Looks on a phone: a tray above the bar with six looks in a row, Edges and More options. The bar holds stroke, background and a chip showing the current look."></a>
-            <figcaption>On a phone, a chip in the bar opens the looks, edges and More options.</figcaption>
-          </figure>
-        </div>
-        <figure class="wide" style="--narrow: 228px">
-          <a href="shots/v3-look-full.webp"><picture><source media="(max-width: 560px)" srcset="shots/v3-look-narrow.webp" width="456" height="776"><img class="frame" src="shots/v3-look.webp" width="2320" height="940" loading="lazy" alt="Looks after one click on the cross-hatched look: that tile is marked, and the rectangle on the canvas is now cross-hatched, keeping its green stroke and light green background."></picture></a>
-          <figcaption>Each look is drawn in the shape's own colors. One click on cross-hatched changes the fill and keeps the green background, and one undo takes it back.</figcaption>
-        </figure>
-      </div>
-
-      <div class="block writeup">
-        <h3>How it works</h3>
-        <p>Looks starts with six whole looks for the selected shape: outline, hatched, cross-hatched, solid, bold sketch and dashed, each drawn in the shape's own colors. One click sets the fill, stroke width, stroke style and sloppiness together, and one undo takes it back. Stroke, background and edges stay right below as today's controls. Everything else folds under More options, which opens in place.</p>
-        <div class="proscons">
-          <div>
-            <h4>What works</h4>
-            <ul>
-              <li>You pick a result you can see, in your own colors.</li>
-              <li>The controls people change most stay right where they are.</li>
-            </ul>
-          </div>
-          <div>
-            <h4>What doesn't</h4>
-            <ul>
-              <li>Six looks can't cover every mix, so some changes still mean opening More options.</li>
-              <li>A look can clear a background you set.</li>
-              <li>With More options open, the panel gets long and scrolls.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="block code">
-        <h3>Code</h3>
-        <dl>
-          <div><dt>Branch</dt><dd><a href="https://github.com/eli-w-king/excalidraw-demo-copy/tree/lab/panel-v3"><code>lab/panel-v3</code></a></dd></div>
-          <div><dt>Worktree</dt><dd><code>properties-panel-v3-variation-3</code></dd></div>
-          <div><dt>Draft pull request</dt><dd><a href="https://github.com/eli-w-king/excalidraw-demo-copy/pull/3">Pull request #3</a></dd></div>
-        </dl>
-        <p class="note">The code is in a private repository, so the branch and pull request links only open for its owner.</p>
-      </div>
-    </section>
   </main>
 
   <footer>
     <p>A practice copy of Excalidraw (MIT licensed), not affiliated with the Excalidraw team.</p>
-    <p>The narration is a synthetic voice, and the music was made in code for these videos.</p>
+    <p>The narration is a synthetic voice, and the music was made in code for this video.</p>
     <p>November 12, 2026</p>
   </footer>
 </div>

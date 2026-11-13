@@ -1,0 +1,53 @@
+WEBVTT
+
+01
+00:00:04.003 --> 00:00:14.064
+This is Recent styles, a version of Value rows. Each change still means opening a row, so Quick style also keeps the last few whole styles you made.
+
+02
+00:00:14.464 --> 00:00:19.277
+Select a shape, and each property shows its value in a field you can open.
+
+03
+00:00:19.776 --> 00:00:23.970
+Style the rectangle one row at a time. First, a green stroke.
+
+04
+00:00:26.614 --> 00:00:28.120
+Then a light green background.
+
+05
+00:00:30.716 --> 00:00:33.621
+And the edges go from round to sharp.
+
+06
+00:00:35.934 --> 00:00:52.250
+Now open Quick style. The style you just made comes first, under Recently used. Below it are the six quick styles, with plain names like Filled, Lines and Crossed lines.
+
+07
+00:00:52.756 --> 00:00:58.674
+Select the ellipse. Quick style stays open, so the whole style is one click.
+
+08
+00:00:58.979 --> 00:01:04.800
+The diamond, the same. A style you make once is one click on every next shape.
+
+09
+00:01:05.252 --> 00:01:11.871
+Everything else is still in the panel. The full palette, with shades and a hex code, opens in place.
+
+10
+00:01:15.417 --> 00:01:21.782
+So do Stroke width, Fill, Stroke style, Sloppiness and Opacity.
+
+11
+00:01:29.783 --> 00:01:33.223
+Layers and the actions share one row of icons at the bottom.
+
+12
+00:01:35.234 --> 00:01:43.506
+What works well: restyling shape after shape takes one click, there's nothing to set up, and each tile shows its style in its own colors.
+
+13
+00:01:44.205 --> 00:01:55.139
+What's harder: the first shape still takes two clicks per change, the tiles have no names, so two close styles can look alike, and Quick style gets a line taller.

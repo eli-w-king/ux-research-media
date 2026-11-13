@@ -1,0 +1,57 @@
+WEBVTT
+
+01
+00:00:05.002 --> 00:00:08.113
+This is Pinned rows, a version of Value rows.
+
+02
+00:00:08.565 --> 00:00:14.809
+Each row shows its value in a field. Stroke starts pinned, so its colors are already open.
+
+03
+00:00:15.311 --> 00:00:19.743
+One click on green, and the stroke changes. There's no row to open first.
+
+04
+00:00:20.145 --> 00:00:25.330
+Pin Background, and it stays open too. One more click for a light green background.
+
+05
+00:00:26.454 --> 00:00:31.311
+Rows you don't pin open one at a time. Edges goes from round to sharp.
+
+06
+00:00:33.183 --> 00:00:40.403
+Quick style says what it sets, and each style has a plain name, like Lines, Crossed lines and Filled.
+
+07
+00:00:42.164 --> 00:00:47.469
+Now the next shape. The pinned rows are open for it too, so each change is one click.
+
+08
+00:00:49.214 --> 00:00:53.178
+And the next one: two clicks again, and no row to open.
+
+09
+00:00:55.901 --> 00:01:00.569
+A row you haven't pinned still opens on its own, beside the pinned ones.
+
+10
+00:01:02.682 --> 00:01:06.954
+The full palette, with shades and a hex code, is one more click.
+
+11
+00:01:09.516 --> 00:01:14.798
+Fill, Stroke style, Sloppiness and Opacity each open in place.
+
+12
+00:01:20.566 --> 00:01:24.017
+Layers and the actions share one row of icons at the bottom.
+
+13
+00:01:26.034 --> 00:01:37.256
+What works well: the rows you change most stay one click away, for every shape you select. Pins stay in place, so nothing jumps, and everything else stays a short summary.
+
+14
+00:01:37.958 --> 00:01:48.739
+What's harder: every row carries a pin, so the panel is a little wider, and two pinned color rows make it taller. If you never pin anything, only Stroke stays open.

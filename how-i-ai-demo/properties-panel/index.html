@@ -6,8 +6,8 @@
 <meta name="robots" content="noindex">
 <meta name="color-scheme" content="light">
 <link rel="icon" href="data:,">
-<meta name="description" content="Value rows, the properties panel direction we picked for a practice copy of Excalidraw, in its second version: screenshots, the first version's demo video, pros and cons, and the code.">
-<title>Properties panel: Value rows</title>
+<meta name="description" content="Round 3 of Value rows, the properties panel direction we picked for a practice copy of Excalidraw: three ways to cut the extra click, with demo videos, screenshots, pros and cons, and the code. Round 2 is below.">
+<title>Properties panel: Value rows, round 3</title>
 <style>
   :root {
     color-scheme: light;
@@ -390,15 +390,158 @@
       width: min(100%, var(--narrow, 100%));
     }
   }
+
+  /* round 3 */
+
+  .round3 {
+    max-width: var(--measure);
+    margin-top: 56px;
+  }
+
+  .round3 .label {
+    margin-bottom: 12px;
+  }
+
+  .round3 p + p {
+    margin-top: 14px;
+  }
+
+  .toc {
+    margin-top: 48px;
+    border-top: 1px solid var(--text);
+    padding-top: 20px;
+  }
+
+  .toc ol {
+    margin: 8px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .toc li + li {
+    border-top: 1px solid var(--border);
+  }
+
+  .toc a {
+    display: grid;
+    grid-template-columns: 28px 9.5rem minmax(0, 1fr);
+    gap: 4px 16px;
+    align-items: baseline;
+    min-height: 44px;
+    padding: 12px 0;
+    text-decoration: none;
+  }
+
+  .toc .num {
+    display: grid;
+    width: 28px;
+    height: 24px;
+    place-items: center;
+    align-self: center;
+    background: var(--text);
+    color: var(--bg);
+    font-size: var(--step--2);
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .toc .name {
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+  }
+
+  .toc .idea {
+    color: var(--muted);
+  }
+
+  .toc-more {
+    margin-top: 4px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: var(--step--1);
+  }
+
+  .toc-more a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  /* links inside sentences: a 44px tap area without changing the line */
+  .round3 p a,
+  .writeup p a {
+    position: relative;
+    padding-block: 12px;
+  }
+
+  .round3 p a::after,
+  .writeup p a::after {
+    position: absolute;
+    inset: 0 -6px;
+    content: "";
+  }
+
+  .demo {
+    margin-top: 36px;
+  }
+
+  .demo video {
+    aspect-ratio: 16 / 10;
+    background: #ffffff;
+  }
+
+  .wide-r3 {
+    margin-bottom: 32px;
+  }
+
+  /* three pictures at one height: column widths follow each image's aspect ratio */
+  .shots.trio3 {
+    grid-template-columns: 39.47fr 46.15fr 46.21fr;
+    max-width: 880px;
+  }
+
+  .shots.sbs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 880px;
+    margin-top: 8px;
+  }
+
+  @media (max-width: 560px) {
+    .toc a {
+      grid-template-columns: 28px minmax(0, 1fr);
+    }
+
+    .toc .idea {
+      grid-column: 2;
+    }
+
+    /* on phones the details switch to tight crops at their real size, one per line */
+    .shots.trio3,
+    .shots.sbs {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .wide-r3 img,
+    .shots.trio3 img,
+    .shots.sbs img {
+      width: min(100%, var(--narrow, 100%));
+    }
+
+    .shots.trio3 .phone img {
+      width: 100%;
+    }
+  }
 </style>
 </head>
 <body>
 <div class="page">
   <header class="intro">
     <p class="label">Design exploration, November 2026</p>
-    <h1>Properties panel: Value rows</h1>
+    <h1>Properties panel: Value rows, round 3</h1>
     <p class="question">How should the properties panel show a shape's style options so it feels less crowded, without hiding what people use?</p>
-    <p class="context">We built five directions in a practice copy of Excalidraw and compared them side by side. Value rows is the one we picked, and this is its second version, with the team's feedback folded in.</p>
+    <p class="context">We built five directions in a practice copy of Excalidraw and picked Value rows. Round 3 is three new versions of it.</p>
 
     <figure class="today">
       <div class="pair">
@@ -407,16 +550,262 @@
       </div>
       <figcaption>Today's panel, with a rectangle selected, on desktop and on a phone.</figcaption>
     </figure>
+
+    <div class="round3">
+      <p class="label">What round 3 asks</p>
+      <p>Round 2 left one cost: every change takes one more click than today's always-open panel, because you open a row and then pick. A <a href="https://eli-w-king.github.io/ux-research-media/how-i-ai-demo/research/properties-panel-value-rows-vs-today/">practice study with fictional results</a> found that people who restyle many shapes feel that most, and that the rows didn't look like they open.</p>
+      <p>Round 3 tries three ways to cut that click. All three share the same fixes: each value sits in a field with an arrow, so a row reads as something to open. Looks is now Quick style, with one short line on what it sets, and the styles have plainer names (Filled, Lines, Crossed lines), which the Fill row uses too.</p>
+    </div>
+
+    <nav class="toc" aria-label="Round 3">
+      <p class="label">The three versions</p>
+      <ol>
+        <li><a href="#open-rows"><span class="num" aria-hidden="true">2a</span><span class="name">Open rows</span><span class="idea">Open as many rows as you like; they stay open from shape to shape.</span></a></li>
+        <li><a href="#pinned-rows"><span class="num" aria-hidden="true">2b</span><span class="name">Pinned rows</span><span class="idea">Pin the rows you use and they stay open for every shape.</span></a></li>
+        <li><a href="#recent-styles"><span class="num" aria-hidden="true">2c</span><span class="name">Recent styles</span><span class="idea">Quick style keeps your last few whole styles, one click each.</span></a></li>
+      </ol>
+      <p class="toc-more"><a href="#side-by-side">The three side by side</a>, then <a href="#value-rows">round 2, as picked</a>.</p>
+    </nav>
   </header>
 
   <main>
+    <section class="variation" id="open-rows" aria-labelledby="open-rows-title">
+      <p class="label">Round 3, version 2a</p>
+      <h2 id="open-rows-title">Open rows</h2>
+      <p class="idea-line">Value rows with any number of rows open at once; open rows stay open as you select other shapes.</p>
+
+      <figure class="demo">
+        <video class="frame" controls preload="metadata" playsinline poster="media/v2a-open-rows-poster.webp" width="1920" height="1200" aria-label="Open rows demo video">
+          <source src="media/v2a-open-rows.mp4" type="video/mp4">
+          <track kind="captions" src="media/v2a-open-rows.vtt" srclang="en" label="English" default>
+          <a href="media/v2a-open-rows.mp4">Download the Open rows demo (MP4)</a>
+        </video>
+        <figcaption>Demo, 1 min 51 s, narrated, with captions.</figcaption>
+      </figure>
+
+      <div class="block writeup">
+        <h3>How it works</h3>
+        <p>Open rows keeps Value rows: every property is a row that shows its current value in a field, and clicking the field opens the row in place. The difference is that any number of rows can be open at once, and they stay open as you select other shapes and when you reload. Open Stroke and Background once, and every shape after that takes one click per change, as in today's always-open panel, while the rows you don't use stay closed. It answers the extra click that Value rows adds, which a practice study with fictional results found people who restyle many shapes feel most. With two or more rows open, Close all brings back the short summary in one click. The rows scroll inside the panel, so it never covers the selection.</p>
+        <div class="proscons">
+          <div>
+            <h4>What works</h4>
+            <ul class="marks">
+              <li>The rows you use stay one click away: open Stroke and Background once, then restyle shape after shape with one click per change, as in today's panel.</li>
+              <li>Nothing opens by itself. The open rows are your own arrangement, and they're kept as you select other shapes and when you reload.</li>
+              <li>It stays calm when tall: the rows scroll inside the panel, Close all and the layer and action buttons stay in view at its foot, and the panel stops short of the selection and never moves the drawing.</li>
+              <li>Getting back is quick: Close all returns the short summary in one click, and Escape closes only the row you're in.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>What doesn't</h4>
+            <ul class="marks">
+              <li>The first change on a row still takes two clicks: open it, then pick.</li>
+              <li>With many rows open the panel gets tall and busy again, close to today's.</li>
+              <li>Closing is up to you. Rows still open after a reload, or days later, can surprise someone who doesn't remember opening them.</li>
+              <li>On the phone, a tray with several open rows covers more of the drawing above the bar.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <h3>In pictures</h3>
+        <figure class="wide-r3" style="--narrow: 264px">
+            <a href="shots/v2a-next-shape-full.webp"><picture><source media="(max-width: 560px)" srcset="shots/v2a-next-shape-narrow.webp" width="528" height="906"><img class="frame" src="shots/v2a-next-shape.webp" width="2320" height="1520" loading="lazy" alt="Open rows with the ellipse selected: Stroke and Background are still open and show the ellipse&#x27;s own values, Black and Blue. The rectangle beside it is already red with a light red fill."></picture></a>
+            <figcaption>A shape later, the rows you opened are still open, now with the ellipse's own values.</figcaption>
+          </figure>
+        <div class="shots trio3">
+          <figure style="--narrow: 264px">
+            <a href="shots/v2a-close-all-full.webp"><picture><source media="(max-width: 560px)" srcset="shots/v2a-close-all-narrow.webp" width="528" height="690"><img class="frame" src="shots/v2a-close-all.webp" width="600" height="1520" loading="lazy" alt="Open rows after Close all: every row is closed again, a short summary of the rectangle with Close all gone."></picture></a>
+            <figcaption>Close all puts every open row away in one click.</figcaption>
+          </figure>
+          <figure style="--narrow: 264px">
+            <a href="shots/v2a-laptop-full.webp"><picture><source media="(max-width: 560px)" srcset="shots/v2a-laptop-narrow.webp" width="528" height="1178"><img class="frame" src="shots/v2a-laptop-panel.webp" width="600" height="1300" loading="lazy" alt="Open rows in a 1280 by 720 window with every row of the rectangle open and the full palette showing. The rows scroll inside the panel, and Close all and the layer and action buttons stay at its foot."></picture></a>
+            <figcaption>On a 1280 by 720 laptop with every row open, the rows scroll inside the panel, which stops short of the rectangle.</figcaption>
+          </figure>
+          <figure class="phone" style="--narrow: 390px">
+            <a href="shots/v2a-phone.webp"><picture><source media="(max-width: 560px)" srcset="shots/v2a-phone-tray.webp" width="780" height="730"><img class="frame" src="shots/v2a-phone.webp" width="780" height="1688" loading="lazy" alt="Open rows on a phone: Stroke and Background open together in one tray above the bar, with Close all at its foot."></picture></a>
+            <figcaption>On a phone, open rows stack in one tray above the bar.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="block code">
+        <h3>Code</h3>
+        <dl>
+          <div><dt>Branch</dt><dd><code>lab/panel-v2a</code></dd></div>
+          <div><dt>Worktree</dt><dd><code>labpanel-v2a-overnight-run</code></dd></div>
+        </dl>
+      </div>
+    </section>
+    <section class="variation" id="pinned-rows" aria-labelledby="pinned-rows-title">
+      <p class="label">Round 3, version 2b</p>
+      <h2 id="pinned-rows-title">Pinned rows</h2>
+      <p class="idea-line">Value rows where the rows you pin stay open everywhere; the rest open one at a time.</p>
+
+      <figure class="demo">
+        <video class="frame" controls preload="metadata" playsinline poster="media/v2b-pinned-rows-poster.webp" width="1920" height="1200" aria-label="Pinned rows demo video">
+          <source src="media/v2b-pinned-rows.mp4" type="video/mp4">
+          <track kind="captions" src="media/v2b-pinned-rows.vtt" srclang="en" label="English" default>
+          <a href="media/v2b-pinned-rows.mp4">Download the Pinned rows demo (MP4)</a>
+        </video>
+        <figcaption>Demo, 1 min 51 s, narrated, with captions.</figcaption>
+      </figure>
+
+      <div class="block writeup">
+        <h3>How it works</h3>
+        <p>Pinned rows keeps Value rows: every property is a row that shows its value in a field, and clicking the field opens the row in place. Each row also has a pin. A pinned row stays open for every shape you select and after a reload, and it stays where it is in the list. The rows you don't pin open one at a time. Stroke starts pinned, so the panel shows what a pin does before anyone touches one. It answers the extra click that Value rows adds for people who restyle many shapes: pin Stroke and Background, and every change after that is one click. It also answers a known limit of accordions that close one section when another opens: they stop people from combining sections (<a href="https://www.nngroup.com/articles/accordions-on-desktop/">NN/g</a>). On the phone nothing starts pinned, and pinned rows stack in the tray above the bar.</p>
+        <div class="proscons">
+          <div>
+            <h4>What works</h4>
+            <ul class="marks">
+              <li>The rows you change most stay one click away, for every shape you select and after a reload, without opening the whole panel back up.</li>
+              <li>Pins stay in place, so nothing jumps when you pin or unpin, and the rows keep the same order for everyone.</li>
+              <li>The default Stroke pin shows what a pin does without any text, and one rule holds everywhere: an accent pin means an open row, with the mouse, the keyboard or a screen reader.</li>
+              <li>Everything you don't pin keeps the short summary: those rows open one at a time, and opening one closes the last.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>What doesn't</h4>
+            <ul class="marks">
+              <li>Every row carries a pin, so the panel is a little wider (16.25rem instead of 14.5rem) and a little busier at rest.</li>
+              <li>Two pinned color rows make the panel taller, and pinning many rows brings back a tall panel. It scrolls inside itself, and the layer and action buttons scroll with the rows.</li>
+              <li>A pin is a small control that is easy to overlook. The default Stroke pin is the only thing that shows what one does, and on the phone nothing starts pinned.</li>
+              <li>Closing a pinned row also unpins it, so there is no way to put a pinned row away for a moment and keep it pinned.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <h3>In pictures</h3>
+        <figure class="wide-r3" style="--narrow: 292px">
+            <a href="shots/v2b-next-shape-full.webp"><picture><source media="(max-width: 560px)" srcset="shots/v2b-next-shape-narrow.webp" width="584" height="842"><img class="frame" src="shots/v2b-next-shape.webp" width="2320" height="1520" loading="lazy" alt="Pinned rows with the ellipse selected: the pinned Stroke and Background rows are open with the ellipse&#x27;s own values, Black and Blue, each with an accent pin. The rectangle is already red with a light red fill."></picture></a>
+            <figcaption>Pinned rows stay open for the next shape, now with the ellipse's own values.</figcaption>
+          </figure>
+        <div class="shots trio3">
+          <figure style="--narrow: 292px">
+            <a href="shots/v2b-unpinned-row-full.webp"><picture><source media="(max-width: 560px)" srcset="shots/v2b-unpinned-row-narrow.webp" width="584" height="968"><img class="frame" src="shots/v2b-unpinned-row.webp" width="600" height="1520" loading="lazy" alt="Pinned rows with Stroke width open on its own between the pinned Stroke and Background rows, showing Thin, Medium and Bold."></picture></a>
+            <figcaption>A row you haven't pinned opens on its own, between the pinned ones.</figcaption>
+          </figure>
+          <figure style="--narrow: 292px">
+            <a href="shots/v2b-laptop-full.webp"><picture><source media="(max-width: 560px)" srcset="shots/v2b-laptop-narrow.webp" width="584" height="1178"><img class="frame" src="shots/v2b-laptop-panel.webp" width="600" height="1300" loading="lazy" alt="Pinned rows in a 1280 by 720 window with all nine rows pinned and open. The rows scroll inside the panel."></picture></a>
+            <figcaption>On a 1280 by 720 laptop with every row pinned, the rows scroll inside the panel, which stops short of the rectangle.</figcaption>
+          </figure>
+          <figure class="phone" style="--narrow: 390px">
+            <a href="shots/v2b-phone.webp"><picture><source media="(max-width: 560px)" srcset="shots/v2b-phone-tray.webp" width="780" height="670"><img class="frame" src="shots/v2b-phone.webp" width="780" height="1688" loading="lazy" alt="Pinned rows on a phone: the tray above the bar shows Stroke pinned, with its accent pin, and Background open under it."></picture></a>
+            <figcaption>On a phone, nothing starts pinned, and pinned rows stack in the tray above the bar.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="block code">
+        <h3>Code</h3>
+        <dl>
+          <div><dt>Branch</dt><dd><code>lab/panel-v2b</code></dd></div>
+          <div><dt>Worktree</dt><dd><code>labpanel-v2b-pinned-rows-setup</code></dd></div>
+        </dl>
+      </div>
+    </section>
+    <section class="variation" id="recent-styles" aria-labelledby="recent-styles-title">
+      <p class="label">Round 3, version 2c</p>
+      <h2 id="recent-styles-title">Recent styles</h2>
+      <p class="idea-line">Value rows where Quick style also offers the last few whole styles you applied, one click each.</p>
+
+      <figure class="demo">
+        <video class="frame" controls preload="metadata" playsinline poster="media/v2c-recent-styles-poster.webp" width="1920" height="1200" aria-label="Recent styles demo video">
+          <source src="media/v2c-recent-styles.mp4" type="video/mp4">
+          <track kind="captions" src="media/v2c-recent-styles.vtt" srclang="en" label="English" default>
+          <a href="media/v2c-recent-styles.mp4">Download the Recent styles demo (MP4)</a>
+        </video>
+        <figcaption>Demo, 1 min 57 s, narrated, with captions.</figcaption>
+      </figure>
+
+      <div class="block writeup">
+        <h3>How it works</h3>
+        <p>Recent styles keeps Value rows: every property is a row that shows its value in a field, and clicking the field opens the row in place. It adds one thing, inside Quick style: up to four whole styles you applied through the panel come first, under Recently used, each a tile drawn in its own colors. A tile carries the full style, from colors and fill to edges and opacity. Style one shape row by row, select the next, and one click on the tile copies that style; with Quick style left open, each shape after that is one click too. It answers the extra click Value rows adds, which a practice study with fictional results found people who restyle many shapes feel most. Applying a recent style also sets the style of the next shape you draw, as any change in the panel does today.</p>
+        <div class="proscons">
+          <div>
+            <h4>What works</h4>
+            <ul class="marks">
+              <li>Restyling shape after shape takes one click: with Quick style open, select a shape and click its tile, and the whole style comes across with no row to open.</li>
+              <li>Nothing to set up: the styles you apply are kept for you, newest first, through a reload; applying a tile never moves it, and the one you keep using never falls off.</li>
+              <li>Each tile shows its style in its own colors on the selected shape's type, so finding one is recognizing it, not reading it.</li>
+              <li>The panel stays as calm as Value rows: Recently used only appears inside Quick style, and only once you've styled something.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>What doesn't</h4>
+            <ul class="marks">
+              <li>A recent style only helps once you've made it: the first shape still takes two clicks per change, and so does a one-off change, like only the stroke.</li>
+              <li>The tiles have no visible names, so two close styles can look alike (screen readers get each one's full name).</li>
+              <li>Quick style gets one line taller when recent styles show.</li>
+              <li>Applying a recent style also sets the style of the next shape you draw, as every change in the panel does today, and that carried-over style is known to confuse people.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <h3>In pictures</h3>
+        <figure class="wide-r3" style="--narrow: 264px">
+            <a href="shots/v2c-next-shape-full.webp"><picture><source media="(max-width: 560px)" srcset="shots/v2c-next-shape-narrow.webp" width="528" height="1298"><img class="frame" src="shots/v2c-next-shape.webp" width="2320" height="1520" loading="lazy" alt="Recent styles with the ellipse selected and Quick style open: under Recently used, one tile shows the red style on an ellipse, and the rows show the ellipse&#x27;s own values, Black and Blue."></picture></a>
+            <figcaption>Select the next shape and Recently used shows the rectangle's style on it, ready to apply.</figcaption>
+          </figure>
+        <div class="shots trio3">
+          <figure style="--narrow: 264px">
+            <a href="shots/v2c-four-styles-full.webp"><picture><source media="(max-width: 560px)" srcset="shots/v2c-four-styles-narrow.webp" width="528" height="1362"><img class="frame" src="shots/v2c-four-styles.webp" width="600" height="1520" loading="lazy" alt="Recent styles with four tiles on one line under Recently used: red with crossed lines (marked), a green stroke on yellow lines, blue, and red."></picture></a>
+            <figcaption>Recently used keeps up to four whole styles, newest first.</figcaption>
+          </figure>
+          <figure style="--narrow: 264px">
+            <a href="shots/v2c-laptop-full.webp"><picture><source media="(max-width: 560px)" srcset="shots/v2c-laptop-narrow.webp" width="528" height="1178"><img class="frame" src="shots/v2c-laptop-panel.webp" width="600" height="1300" loading="lazy" alt="Recent styles in a 1280 by 720 window: Quick style open with four recent styles on one line, and the rows scrolling inside the panel."></picture></a>
+            <figcaption>On a 1280 by 720 laptop, the four tiles still fit on one line and the rows scroll inside the panel.</figcaption>
+          </figure>
+          <figure class="phone" style="--narrow: 390px">
+            <a href="shots/v2c-phone.webp"><picture><source media="(max-width: 560px)" srcset="shots/v2c-phone-tray.webp" width="780" height="844"><img class="frame" src="shots/v2c-phone.webp" width="780" height="1688" loading="lazy" alt="Recent styles on a phone: the Quick style tray above the bar starts with Recently used, the green style marked and the red one beside it, then the six quick styles."></picture></a>
+            <figcaption>On a phone, Recently used comes first in the Quick style tray.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="block code">
+        <h3>Code</h3>
+        <dl>
+          <div><dt>Branch</dt><dd><code>lab/panel-v2c</code></dd></div>
+          <div><dt>Worktree</dt><dd><code>labpanel-v2c-autonomous-work</code></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="variation" id="side-by-side" aria-labelledby="side-by-side-title">
+      <p class="label">Round 3</p>
+      <h2 id="side-by-side-title">Side by side</h2>
+      <p class="idea-line">The same task in each version: give the ellipse the rectangle's red stroke and light red fill. These are the panels right after the ellipse's last click.</p>
+      <div class="block">
+        <div class="shots sbs">
+          <figure style="--narrow: 264px">
+            <a href="shots/v2a-end-full.webp"><picture><source media="(max-width: 560px)" srcset="shots/v2a-end-narrow.webp" width="528" height="906"><img class="frame" src="shots/v2a-end.webp" width="600" height="1304" loading="lazy" alt="Open rows right after the ellipse&#x27;s last click: Stroke and Background are open, both reading Red, with Close all under them."></picture></a>
+            <figcaption>Open rows: Stroke and Background were still open, so the ellipse took two clicks.</figcaption>
+          </figure>
+          <figure style="--narrow: 292px">
+            <a href="shots/v2b-end-full.webp"><picture><source media="(max-width: 560px)" srcset="shots/v2b-end-narrow.webp" width="584" height="842"><img class="frame" src="shots/v2b-end.webp" width="600" height="1304" loading="lazy" alt="Pinned rows right after the ellipse&#x27;s last click: the pinned Stroke and Background rows are open, both reading Red."></picture></a>
+            <figcaption>Pinned rows: Stroke and Background were pinned, so the ellipse took two clicks.</figcaption>
+          </figure>
+          <figure style="--narrow: 264px">
+            <a href="shots/v2c-end-full.webp"><picture><source media="(max-width: 560px)" srcset="shots/v2c-end-narrow.webp" width="528" height="1298"><img class="frame" src="shots/v2c-end.webp" width="600" height="1304" loading="lazy" alt="Recent styles right after the ellipse&#x27;s one click: Quick style is open with the recent style&#x27;s tile marked, and Stroke and Background read Red."></picture></a>
+            <figcaption>Recent styles: the rectangle's style was under Recently used, so the ellipse took one click.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <section class="variation" id="value-rows" aria-labelledby="value-rows-title">
-      <p class="label">The direction we picked</p>
-      <h2 id="value-rows-title">Value rows</h2>
+      <p class="label">Round 2</p>
+      <h2 id="value-rows-title">Value rows, as picked</h2>
       <p class="idea-line">One row per property shows its current value; open one row at a time to change it, right there.</p>
 
       <div class="block writeup">
-        <h3>How it works now</h3>
+        <h3>How it works</h3>
         <p>Value rows turns the panel into a short summary of the selected shape: one row per property, with its name and current value (Stroke: Black). Open a row and its choices appear right under it as a grid, each with the product's icon over its name. One row is open at a time, and the panel never gets wider.</p>
         <p>What's new, from the team's feedback:</p>
         <ul class="marks">
@@ -515,8 +904,8 @@
 
   <footer>
     <p>A practice copy of Excalidraw (MIT licensed), not affiliated with the Excalidraw team.</p>
-    <p>The narration is a synthetic voice, and the music was made in code for this video.</p>
-    <p>November 12, 2026</p>
+    <p>The narration is a synthetic voice, and the music was made in code for these videos.</p>
+    <p>November 13, 2026</p>
   </footer>
 </div>
 </body>

@@ -1,0 +1,108 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><link rel="icon" href="data:,">
+<title>Properties panel: practice study findings (fictional)</title>
+<style>
+:root{--bg:#fbfaf7;--ink:#1d1d20;--muted:#5d5d66;--line:#e6e3dc;--card:#ffffff;--accent:#5b57d1;--accent-soft:#ecebff;--warn:#8a5a00;--warn-soft:#fff4dc;--ok:#1f6f43;--ok-soft:#e3f4ea}
+@media (prefers-color-scheme:dark){:root{--bg:#141417;--ink:#ececf1;--muted:#a3a3ad;--line:#2c2c33;--card:#1c1c21;--accent:#a8a5ff;--accent-soft:#26254a;--warn:#ffcf7a;--warn-soft:#3a2d12;--ok:#7fd8a4;--ok-soft:#173326}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}
+.label{display:inline-block;background:var(--warn-soft);color:var(--warn);border-radius:999px;padding:.2em .8em;font-size:.8rem;font-weight:600;letter-spacing:.01em}
+blockquote{margin:0;padding:.9rem 1.1rem;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px}
+blockquote p{margin:0}
+blockquote footer{margin-top:.35rem;color:var(--muted);font-size:.82rem}
+img{max-width:100%;height:auto}
+
+main{max-width:880px;margin:0 auto;padding:clamp(20px,5vw,56px) clamp(16px,4vw,32px) 80px}
+header h1{font-size:clamp(28px,3vw + 14px,46px);line-height:1.1;letter-spacing:-.02em;margin:.4em 0 .3em}
+header .lede{font-size:1.1em;color:var(--muted);margin:0 0 1em}
+.fiction{background:var(--warn-soft);color:var(--warn);border-radius:12px;padding:.8em 1em;margin:1em 0;font-weight:500}
+.links{display:flex;flex-wrap:wrap;gap:.6em;margin:1.2em 0 0}
+.links a{display:inline-block;padding:.5em .9em;border-radius:10px;border:1px solid var(--line);background:var(--card);text-decoration:none;font-weight:600}
+section{margin-top:3em}
+h2{font-size:1.5em;letter-spacing:-.01em;margin:0 0 .6em}
+ol.rec{padding-left:1.3em}ol.rec li{margin:.4em 0}
+table{width:100%;border-collapse:collapse;font-size:.93em;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+th,td{text-align:left;vertical-align:top;padding:.6em .75em;border-bottom:1px solid var(--line)}
+th{font-size:.8em;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:700}
+tr:last-child td{border-bottom:0}
+.table-wrap{overflow-x:auto}
+.finding{margin:2.2em 0}
+.finding h3{font-size:1.18em;margin:0 0 .4em;line-height:1.3}
+.num{display:inline-grid;place-items:center;width:1.6em;height:1.6em;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-size:.85em;margin-right:.2em}
+.tag{font-size:.65em;font-weight:700;border-radius:999px;padding:.2em .7em;vertical-align:middle;white-space:nowrap}
+.tag.accent{background:var(--accent-soft);color:var(--accent)}.tag.ok{background:var(--ok-soft);color:var(--ok)}.tag.warn{background:var(--warn-soft);color:var(--warn)}
+.finding blockquote{margin:.6em 0}
+.against-h{font-size:.8em;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:700;margin:1em 0 .2em}
+blockquote.against{border-left-color:var(--muted)}
+.change{background:var(--accent-soft);border-radius:10px;padding:.7em 1em;margin-top:.8em}
+.pair{margin:1.5em 0 2.2em}
+.breakout{width:min(1240px,calc(100vw - 32px));margin-left:50%;transform:translateX(-50%)}
+.pair figcaption{font-weight:700;margin-bottom:.6em}
+.pair-row{display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap}
+.pair-row>div{display:flex;flex-direction:column;gap:.4em;flex:1 1 520px;min-width:0}
+.pair img{border:1px solid var(--line);border-radius:10px;background:#fff;max-width:100%;height:auto}
+.tagline{font-size:.75em;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.deck-frame{width:100%;aspect-ratio:16/10;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+ul.small{padding-left:1.2em}ul.small li{margin:.5em 0}
+.asks blockquote{margin:.6em 0}
+footer.page{margin-top:4em;color:var(--muted);font-size:.85em;border-top:1px solid var(--line);padding-top:1em}
+@media (max-width:640px){.deck-frame{aspect-ratio:3/4}}
+</style></head><body><main>
+<header>
+<span class="label">Fictional practice results</span>
+<h1>Properties panel: value rows read well, and now they need to look clickable</h1>
+<p class="lede">Five practice interviews compared the picked Excalidraw properties panel (one row per property, with its current value) with today's panel. Here are the findings, the quotes behind them, and round 2 of the design.</p>
+<p class="fiction">Fictional, written for the workshop. These are practice study results, not real research: no real participants, no real interviews, and nothing here is real user feedback.</p>
+<div class="links"><a href="https://github.com/eli-w-king/excalidraw-demo-copy/pull/4">Draft PR: round 2 of the panel</a><a href="deck.html">The deck</a><a href="#before-after">Before and after</a></div>
+</header>
+
+<section id="recommendation"><h2>Recommendation</h2>
+<p>Keep the value rows. Every participant read them as the shape's current settings, and three of five would rather use them. Fix three things first:</p>
+<ol class="rec">
+<li><b>Make the rows look like controls.</b> P3 read them as "a receipt", and P2 and P4 were guessing that a row opens.</li>
+<li><b>Let rows stay open, several at once.</b> The two heaviest Excalidraw users felt the extra click on every change.</li>
+<li><b>Rename what people misread.</b> Look becomes Quick style, with a line saying what it sets. Solid, Hatched and Cross-hatched become Filled, Lines and Crossed lines.</li>
+</ol>
+<p>Round 2 of the panel does all three. Next, rerun only the questions these changes touch, with both panel orders and a mix of Excalidraw users and people new to it.</p>
+</section>
+
+<section id="glance"><h2>At a glance</h2><div class="table-wrap"><table><tbody><tr><td>Would rather use</td><td>New panel 3 (P1, P3, P4), today&#x27;s 1 (P2), split 1 (P5)</td></tr><tr><td>Ease of the new panel, 1 to 7</td><td>6, 3, 5, 4, 4 (P1 to P5): median 4</td></tr><tr><td>Read the rows as the shape&#x27;s current settings</td><td>5 of 5</td></tr><tr><td>Sure that a row opens when clicked</td><td>2 of 5 (P1, P5); P2 and P4 guessed; P3 thought the rows only showed settings</td></tr><tr><td>Read &quot;Look&quot; as a preview</td><td>2 of 5 (P2, P4)</td></tr><tr><td>Tripped on a look name</td><td>Solid 2 (P1, P2), Hatched 2 (P3, P4), Cross-hatched 2 (P3, P4), Bold sketch 1, Dashed 1</td></tr></tbody></table></div></section>
+
+<section id="findings"><h2>Findings and quotes</h2>
+<p>Ranked by strength. Counts are out of five. Quotes are verbatim and cite the participant, the question and the time.</p>
+<article class="finding" id="f1"><h3><span class="num">1</span> The value rows make the shape readable at a glance <span class="tag ok">Keep</span></h3><p>All five read the new panel as a summary of how the shape is drawn right now, and three said words beat today&#x27;s icons.</p><blockquote class="q"><p>This one tells me what it is right now, which I like. Background: transparent. Oh, that&#x27;s why the box looks empty. That actually answers a question I had about the first one.</p><footer>P4, Q3, 04:10</footer></blockquote><blockquote class="q"><p>Oh, this reads like a spec sheet. Stroke, black. Background, transparent. I can see what the shape is without opening anything, which I really like.</p><footer>P1, Q3, 04:02</footer></blockquote><blockquote class="q"><p>This is easier to read. It&#x27;s words, not icons.</p><footer>P3, Q3, 03:50</footer></blockquote><blockquote class="q"><p>It&#x27;s a lot of tiny icons. I&#x27;d click the colored squares, I guess. The rows with the squiggly lines, I&#x27;ve never known what those do.</p><footer>P3, Q2, 02:02</footer></blockquote><p class="against-h">Against it</p><blockquote class="q against"><p>Honestly, this one I know. Everything&#x27;s right there. Click, click, done.</p><footer>P2, Q2, 02:40</footer></blockquote><blockquote class="q against"><p>I don&#x27;t love it, but my hands know it.</p><footer>P5, Q2, 01:58</footer></blockquote><p class="change"><b>Round 2:</b> Kept: the rows, their order and their values.</p></article><article class="finding" id="f2"><h3><span class="num">2</span> The rows don&#x27;t look like they open <span class="tag accent">Fixed in round 2</span></h3><p>Only P1 and P5 were sure a row opens, and P1 noticed the chevrons only because they were looking for them.</p><blockquote class="q"><p>It looks like a summary, like a receipt. Nothing says &quot;change me.&quot; Now that you say it, I see the little arrows.</p><footer>P3, Q3, 04:33</footer></blockquote><blockquote class="q"><p>It shows the options? I&#x27;m guessing.</p><footer>P4, Q3, 04:55</footer></blockquote><blockquote class="q"><p>Make the rows feel more clickable. The arrows are small, and I only noticed them because I was looking for them.</p><footer>P1, Q7, 13:45</footer></blockquote><p class="against-h">Against it</p><blockquote class="q against"><p>The little arrows on the right. It looks like an accordion.</p><footer>P1, Q3, 04:43</footer></blockquote><p class="change"><b>Round 2:</b> Each value sits in a field with a clear chevron, so a row reads as a dropdown even in a screenshot.</p></article><article class="finding" id="f3"><h3><span class="num">3</span> Every change costs one more click, and people who style a lot feel it <span class="tag accent">Fixed in round 2</span></h3><p>The two heaviest Excalidraw users gave the lowest ease scores (3 and 4) and asked for the same thing: keep rows open.</p><blockquote class="q"><p>When I&#x27;m styling thirty boxes, I change color, then width, then maybe the fill. In the first one that&#x27;s three clicks. Here it&#x27;s open, pick, open, pick, open, pick. That adds up fast.</p><footer>P2, Q3, 04:58</footer></blockquote><blockquote class="q"><p>Let me keep a row open. Or let me open two at once. If I could leave color open while I click through shapes, most of my complaint goes away.</p><footer>P2, Q7, 14:03</footer></blockquote><blockquote class="q"><p>Split. For daily work, the first one, because I&#x27;m fast in it. If the second one let me pin the two or three rows I use, I&#x27;d switch.</p><footer>P5, Q4, 06:05</footer></blockquote><p class="against-h">Against it</p><blockquote class="q against"><p>The second one looks nicer and I&#x27;d probably hand it to someone new. But for me the old one is faster.</p><footer>P2, Q4, 07:10</footer></blockquote><p class="change"><b>Round 2:</b> Several rows can be open at once. They stay open as the selection changes, and the panel remembers them.</p></article><article class="finding" id="f4"><h3><span class="num">4</span> &quot;Look&quot; doesn&#x27;t say what the row does <span class="tag accent">Fixed in round 2</span></h3><p>Two of five read Look as a preview. Two suggested names people know from other tools.</p><blockquote class="q"><p>Look is a strange word for it. Look at what? I thought it was going to preview something.</p><footer>P2, Q5, 09:05</footer></blockquote><blockquote class="q"><p>I didn&#x27;t get what Look meant at first. I thought it was about how it looks to other people, like a preview. Once I saw the six pictures it made sense: it&#x27;s a starting style.</p><footer>P4, Q5, 08:02</footer></blockquote><blockquote class="q"><p>Call the Look row something like &quot;Quick styles&quot; so I know it&#x27;s a shortcut.</p><footer>P4, Q7, 13:12</footer></blockquote><blockquote class="q"><p>Look is fine. Maybe &quot;Style&quot; would be more common, that&#x27;s what Figma would call it.</p><footer>P1, Q5, 09:23</footer></blockquote><p class="change"><b>Round 2:</b> The row is called Quick style, and opening it starts with one line: &quot;Sets fill, stroke width, stroke style and sloppiness in one click.&quot;</p></article><article class="finding" id="f5"><h3><span class="num">5</span> Three look names trip people up: Solid, Hatched and Cross-hatched <span class="tag accent">Fixed in round 2</span></h3><p>The pictures rescue every name, but &quot;Solid&quot; collides with Stroke style&#x27;s Solid, and &quot;hatched&quot; isn&#x27;t a word everyone knows.</p><blockquote class="q"><p>Solid is confusing, though, because there&#x27;s also a stroke style that&#x27;s solid. Which solid is it?</p><footer>P2, Q5, 09:05</footer></blockquote><blockquote class="q"><p>Filled in with gray. I&#x27;d have called that Filled.</p><footer>P3, Q5, 08:42</footer></blockquote><blockquote class="q"><p>I don&#x27;t actually know what hatched means. Is that like a hatch in a door?</p><footer>P3, Q5, 07:48</footer></blockquote><blockquote class="q"><p>Hatched and Cross-hatched I&#x27;d never use, I don&#x27;t know those words.</p><footer>P4, Q5, 08:02</footer></blockquote><blockquote class="q"><p>And maybe use plainer words for the looks, like Lines and Crossed lines instead of Hatched.</p><footer>P3, Q7, 12:30</footer></blockquote><p class="against-h">Against it</p><blockquote class="q against"><p>Hatched and Cross-hatched are standard drawing words, I get them.</p><footer>P5, Q5, 07:50</footer></blockquote><p class="change"><b>Round 2:</b> Solid becomes Filled, Hatched becomes Lines, and Cross-hatched becomes Crossed lines.</p></article><article class="finding" id="f6"><h3><span class="num">6</span> Looks overlap with Stroke style, and Custom matches what people expect <span class="tag warn">Watch</span></h3><p>Three people noticed a look name that repeats another row&#x27;s value (Solid, Dashed). P5 then predicted the design&#x27;s own answer.</p><blockquote class="q"><p>Dashed is weird, because there&#x27;s also a stroke style row that does dashed. So if I pick the Dashed look and then change stroke style, what&#x27;s the look now?</p><footer>P5, Q5, 07:50</footer></blockquote><blockquote class="q"><p>It should say Custom or something. Otherwise it&#x27;s lying to me.</p><footer>P5, Q5, 08:47</footer></blockquote><p class="change"><b>Round 2:</b> Filled removes the Solid overlap. Dashed stays, because the row already says Custom once a look no longer matches.</p></article>
+<h3>Smaller asks, one person each (not changed yet)</h3>
+<div class="asks"><blockquote class="q"><p>Bold like thick, or bold like messy?</p><footer>P4, Q5, 09:01</footer></blockquote><blockquote class="q"><p>And put the outline color and inside color closer together, so I don&#x27;t mix them up.</p><footer>P4, Q7, 13:12</footer></blockquote><blockquote class="q"><p>And show the stroke grid with all the colors, not just five, because I use custom colors a lot.</p><footer>P5, Q7, 12:05</footer></blockquote></div>
+</section>
+
+<section id="before-after"><h2>Before and after</h2>
+<p>The same rectangle in the same lab, with motion off. Before is the picked panel people saw; after is round 2.</p>
+<div class="breakout"><figure class="pair"><figcaption>Every row closed, the rectangle selected</figcaption><div class="pair-row"><div><span class="tagline">Before: the picked panel</span><img src="img/before-closed.webp" width="583" height="354" alt="Picked panel: every row closed, the rectangle selected. Look reads Outline; the chevrons are faint."></div><div><span class="tagline">After: round 2</span><img src="img/after-closed.webp" width="583" height="354" alt="Round 2: every row closed. Each value sits in a field with a chevron; the top row reads Quick style, Outline."></div></div></figure><figure class="pair"><figcaption>Changing the stroke</figcaption><div class="pair-row"><div><span class="tagline">Before: the picked panel</span><img src="img/before-open.webp" width="583" height="396" alt="Picked panel: one row open at a time (Stroke width)."></div><div><span class="tagline">After: round 2</span><img src="img/after-open.webp" width="583" height="496" alt="Round 2: Stroke and Stroke width open together, and they stay open as the selection changes."></div></div></figure><figure class="pair"><figcaption>The top row open</figcaption><div class="pair-row"><div><span class="tagline">Before: the picked panel</span><img src="img/before-looks.webp" width="320" height="552" alt="Picked panel: Look open, with Outline, Hatched, Cross-hatched, Solid, Bold sketch and Dashed."></div><div><span class="tagline">After: round 2</span><img src="img/after-looks.webp" width="320" height="602" alt="Round 2: Quick style open, with one line on what it sets, and Outline, Lines, Crossed lines, Filled, Bold sketch and Dashed."></div></div></figure><figure class="pair"><figcaption>After a change no look matches</figcaption><div class="pair-row"><div><span class="tagline">Before: the picked panel</span><img src="img/before-custom.webp" width="583" height="354" alt="Picked panel: Stroke width set to Bold, so Look reads Custom."></div><div><span class="tagline">After: round 2</span><img src="img/after-custom.webp" width="583" height="354" alt="Round 2: the same change; Quick style reads Custom."></div></div></figure></div>
+<p><a href="https://github.com/eli-w-king/excalidraw-demo-copy/pull/4">See the draft PR</a> for the code and how to try it.</p>
+</section>
+
+<section id="deck"><h2>The deck</h2>
+<p>Ten slides. Use the arrow keys, or <a href="deck.html">open it on its own</a>.</p>
+<iframe class="deck-frame" src="deck.html" title="Findings deck" loading="lazy"></iframe>
+</section>
+
+<section id="scorecard"><h2>Against the success criteria</h2>
+<p>The criteria were written before launch, for a 12-question guide. The practice guide asked 7, so some can't be scored.</p>
+<div class="table-wrap"><table><thead><tr><th>Criterion</th><th>Bar</th><th>What the practice data shows</th><th>Verdict</th></tr></thead><tbody><tr><td><b>Reading</b></td><td>Most read 3 or more values from the panel they saw first</td><td>Nobody was asked to read values. Unprompted, 5 of 5 described the new panel as the shape&#x27;s current settings, and 3 of 5 read a value aloud. Nobody did that from today&#x27;s panel.</td><td>Not testable as written; leans new</td></tr><tr><td><b>Finding</b></td><td>No more than 1 of 5 fails to find Stroke width unaided</td><td>No find task on the new panel. Asked what a click on a row does: P1 and P5 were sure, P2 and P4 guessed, P3 thought the rows were read only.</td><td>Not testable; 3 of 5 unsure</td></tr><tr><td><b>Preference</b></td><td>Directional only</td><td>New 3, today&#x27;s 1, split 1. The two heaviest Excalidraw users leaned to today&#x27;s panel for speed.</td><td>Leans new, not for daily users</td></tr><tr><td><b>Look row</b></td><td>4 of 5 expect ready-made choices that change several things</td><td>P2 and P4 read Look as a preview; at most 2 understood it.</td><td>Not met: rename</td></tr><tr><td><b>Box names</b></td><td>Flag any name 2 or more people misread</td><td>Solid (P1, P2), Hatched and Cross-hatched (P3, P4). Asked with the pictures visible.</td><td>Flagged: rename three</td></tr><tr><td><b>Arrow names</b></td><td>4 of 5 tell Sketch, Clean and Fine apart</td><td>Not asked.</td><td>Not tested</td></tr><tr><td><b>Custom</b></td><td>4 of 5 read Custom as &quot;matches none&quot;</td><td>Not asked. P5 expected Custom unprompted.</td><td>Not tested</td></tr></tbody></table></div>
+</section>
+
+<section id="method"><h2>Method and limits</h2>
+<ul class="small">
+<li>Five voice interviews with an AI moderator, 16 to 22 minutes each, about still screenshots of the real lab build. None were excluded for quality.</li>
+<li>Everyone saw today's panel first, then the picked panel, then its top row open. Without the other order, recency and familiarity can't be separated from the panels.</li>
+<li>All five had used Excalidraw, so familiarity with today's panel is overrepresented.</li>
+<li>The guide had no unaided "make the border thicker" task, showed the look names with their pictures, and skipped the arrow looks and the Custom value.</li>
+<li>Screenshots show what people expect, not what they did. The panel isn't shipped, so there's no usage data.</li>
+</ul>
+</section>
+
+<footer class="page"><p>Fictional, written for the workshop. These are practice study results, not real research: no real participants, no real interviews, and nothing here is real user feedback.</p><p>Round 2 build: commit 2fa18a5. Generated November 12, 2026.</p></footer>
+</main></body></html>
